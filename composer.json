@@ -4,6 +4,8 @@
     "description": "Premium Laravel Medical/Healthcare Website",
     "require": {
         "php": "^8.2",
+        "ext-intl": "*",
+        "ext-zip": "*",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.9",
         "livewire/livewire": "^3.5",
