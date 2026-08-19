@@ -1,0 +1,79 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-slate-50 text-slate-700 antialiased; font-feature-settings: "cv02","cv03","cv04","cv11"; }
+  ::selection { background: rgba(31,131,251,.18); color: #071c40; }
+}
+
+@layer components {
+  .container-shell { @apply mx-auto w-full max-w-[1280px] px-5 sm:px-6 lg:px-8; }
+  .section { @apply py-20 sm:py-24 lg:py-28; }
+  .section-label {
+    @apply inline-flex items-center gap-2 rounded-full border border-primary-100 bg-primary-50/80 px-3.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[.18em] text-primary-700;
+  }
+  .section-heading { @apply mt-4 text-3xl font-extrabold leading-[1.08] tracking-[-.035em] text-navy-900 sm:text-4xl lg:text-[48px]; }
+  .section-copy { @apply mt-5 max-w-2xl text-base leading-7 text-slate-500 sm:text-lg; }
+
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-primary-600 px-6 py-3.5 text-sm font-bold text-white shadow-[0_14px_35px_-16px_rgba(15,99,224,.8)] transition duration-300 hover:-translate-y-0.5 hover:bg-primary-700 hover:shadow-[0_18px_45px_-16px_rgba(15,99,224,.9)] focus:outline-none focus:ring-4 focus:ring-primary-100;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3.5 text-sm font-bold text-navy-900 shadow-sm transition duration-300 hover:-translate-y-0.5 hover:border-primary-200 hover:bg-primary-50 hover:text-primary-700 focus:outline-none focus:ring-4 focus:ring-primary-100;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center gap-2 rounded-full px-4 py-2.5 text-sm font-bold text-slate-600 transition hover:bg-slate-100 hover:text-primary-700;
+  }
+
+  .premium-card {
+    @apply rounded-[28px] border border-white/80 bg-white shadow-[0_20px_70px_-35px_rgba(15,31,58,.28)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_28px_80px_-35px_rgba(15,31,58,.34)];
+  }
+  .glass-card {
+    @apply rounded-[28px] border border-white/70 bg-white/75 shadow-[0_25px_80px_-40px_rgba(7,28,64,.35)] backdrop-blur-xl;
+  }
+  .soft-panel { @apply rounded-[32px] border border-slate-100 bg-white shadow-[0_24px_80px_-42px_rgba(7,28,64,.3)]; }
+
+  /* Generic premium card — used by pricing/testimonial/service cards and forms.
+     (Was referenced across the app but never defined — this was causing
+     those components to render with zero styling.) */
+  .card {
+    @apply relative rounded-[28px] border border-slate-100 bg-white p-7 shadow-[0_18px_60px_-38px_rgba(7,28,64,.32)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_26px_75px_-38px_rgba(7,28,64,.4)];
+  }
+
+  .input-field {
+    @apply w-full rounded-2xl border border-slate-200 bg-white px-4 py-3.5 text-sm font-medium text-slate-800 outline-none transition placeholder:text-slate-400 focus:border-primary-400 focus:ring-4 focus:ring-primary-50;
+  }
+
+  .eyebrow-dot { @apply h-2 w-2 rounded-full bg-accent-500 shadow-[0_0_0_5px_rgba(20,184,189,.12)]; }
+  .icon-tile { @apply flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-primary-50 text-primary-600 transition duration-300; }
+  .card-link { @apply inline-flex items-center gap-2 text-sm font-extrabold text-primary-700 transition group-hover:gap-3; }
+
+  .page-hero {
+    @apply relative overflow-hidden border-b border-slate-100 bg-[radial-gradient(circle_at_10%_10%,rgba(31,131,251,.12),transparent_32%),radial-gradient(circle_at_90%_20%,rgba(20,184,189,.11),transparent_28%),linear-gradient(180deg,#f8fbff_0%,#ffffff_100%)];
+  }
+}
+
+@layer utilities {
+  .text-balance { text-wrap: balance; }
+  .animate-float-slow { animation: floatSlow 7s ease-in-out infinite; }
+  .animate-float { animation: float 5s ease-in-out infinite; }
+  .animate-pulse-soft { animation: pulseSoft 3s ease-in-out infinite; }
+  .grid-glow {
+    background-image: linear-gradient(rgba(31,131,251,.055) 1px, transparent 1px), linear-gradient(90deg, rgba(31,131,251,.055) 1px, transparent 1px);
+    background-size: 34px 34px;
+  }
+}
+
+@keyframes floatSlow { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+@keyframes float { 0%,100%{transform:translateY(0) rotate(0)} 50%{transform:translateY(-9px) rotate(1deg)} }
+@keyframes pulseSoft { 0%,100%{box-shadow:0 0 0 0 rgba(20,184,189,.12)} 50%{box-shadow:0 0 0 12px rgba(20,184,189,0)} }
+[x-cloak] { display:none !important; }
+
+.portal-nav { @apply flex items-center rounded-2xl px-3 py-2.5 text-sm font-bold text-slate-600 transition hover:bg-slate-50 hover:text-primary-700; }
+.portal-nav.active { @apply bg-primary-50 text-primary-700; }
+.stat-card { @apply rounded-[26px] border border-slate-200/80 bg-white p-5 shadow-[0_18px_55px_-40px_rgba(7,28,64,.45)]; }
+
+.label { @apply mb-2 block text-sm font-bold text-slate-700; }
