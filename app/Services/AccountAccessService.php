@@ -22,8 +22,8 @@ class AccountAccessService
         ]);
 
         return URL::route('password.setup', ['token' => $raw, 'email' => $user->email]);
-    }
-
+    }  
+    
     public function sendSetup(User $user, string $portalLabel): void
     {
         Mail::to($user->email)->send(
