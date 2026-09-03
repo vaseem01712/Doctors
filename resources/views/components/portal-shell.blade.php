@@ -1,7 +1,7 @@
 @props(['title' => 'Portal', 'eyebrow' => 'SECURE PORTAL'])
 
 <x-layouts.app :seo-title="$title . ' — MediCare'">
-    <div class="min-h-screen bg-[#f5f8fc] py-6 sm:py-8">
+    <div class="mt-[123px] min-h-screen bg-[#f5f8fc] py-6 sm:py-8">
         <div class="container-shell grid gap-6 lg:grid-cols-[240px_1fr]">
             <aside class="hidden rounded-[28px] border border-slate-200 bg-white p-3 shadow-sm lg:block">
                 @if(auth()->user()->isDoctor())

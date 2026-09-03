@@ -80,4 +80,4 @@ unset($__defined_vars, $__key, $__value); ?>
 <?php $component = $__componentOriginal5863877a5171c196453bfa0bd807e410; ?>
 <?php unset($__componentOriginal5863877a5171c196453bfa0bd807e410); ?>
 <?php endif; ?>
-<?php /**PATH C:\ITprojects\New folder\resources\views\components\portal-shell.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\ITprojects\New folder\resources\views/components/portal-shell.blade.php ENDPATH**/ ?>
