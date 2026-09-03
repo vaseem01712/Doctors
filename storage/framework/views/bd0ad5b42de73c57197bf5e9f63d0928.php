@@ -56,4 +56,4 @@ unset($__defined_vars, $__key, $__value); ?>
         <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4"><span class="text-xs font-semibold text-slate-400"><?php echo e($doctor->experience_years ?? '0'); ?>+ years experience</span><a href="<?php echo e(route('doctors.show', $doctor)); ?>" class="text-sm font-extrabold text-primary-700 transition group-hover:translate-x-1">View profile →</a></div>
     </div>
 </div>
-<?php /**PATH C:\ITprojects\New folder\resources\views\components\doctor-card.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\ITprojects\New folder\resources\views/components/doctor-card.blade.php ENDPATH**/ ?>

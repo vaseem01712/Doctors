@@ -1,5 +1,33 @@
-@props(['service'])
-@php
+<?php $attributes ??= new \Illuminate\View\ComponentAttributeBag;
+
+$__newAttributes = [];
+$__propNames = \Illuminate\View\ComponentAttributeBag::extractPropNames((['service']));
+
+foreach ($attributes->all() as $__key => $__value) {
+    if (in_array($__key, $__propNames)) {
+        $$__key = $$__key ?? $__value;
+    } else {
+        $__newAttributes[$__key] = $__value;
+    }
+}
+
+$attributes = new \Illuminate\View\ComponentAttributeBag($__newAttributes);
+
+unset($__propNames);
+unset($__newAttributes);
+
+foreach (array_filter((['service']), 'is_string', ARRAY_FILTER_USE_KEY) as $__key => $__value) {
+    $$__key = $$__key ?? $__value;
+}
+
+$__defined_vars = get_defined_vars();
+
+foreach ($attributes->all() as $__key => $__value) {
+    if (array_key_exists($__key, $__defined_vars)) unset($$__key);
+}
+
+unset($__defined_vars, $__key, $__value); ?>
+<?php
     $title = strtolower($service->title);
     $serviceImages = [
         'consult' => 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=900&q=85&auto=format&fit=crop',
@@ -10,10 +38,10 @@
     ];
     $matchedImage = collect($serviceImages)->first(fn ($url, $key) => str_contains($title, $key));
     $image = $service->image ? asset('storage/' . ltrim($service->image, '/')) : ($matchedImage ?: 'https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=900&q=85&auto=format&fit=crop');
-@endphp
+?>
 <div class="group overflow-hidden rounded-[28px] border border-slate-200/80 bg-white shadow-[0_18px_55px_-32px_rgba(7,28,64,.35)] transition duration-500 hover:-translate-y-1 hover:border-primary-200 hover:shadow-[0_28px_70px_-32px_rgba(7,28,64,.42)]">
     <div class="relative h-48 overflow-hidden bg-primary-50">
-        <img src="{{ $image }}" alt="{{ $service->title }}" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
+        <img src="<?php echo e($image); ?>" alt="<?php echo e($service->title); ?>" class="h-full w-full object-cover transition duration-700 group-hover:scale-105">
         <div class="absolute inset-0 bg-gradient-to-t from-navy-900/60 via-transparent to-transparent"></div>
         <div class="absolute bottom-4 left-4 flex h-11 w-11 items-center justify-center rounded-2xl bg-white/90 text-primary-600 shadow-lg backdrop-blur">
         <svg xmlns="http://www.w3.org/2000/svg" class="h-7 w-7" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -21,5 +49,6 @@
         </svg>
         </div>
     </div>
-    <div class="p-6"><h3 class="text-lg font-extrabold text-navy-900">{{ $service->title }}</h3><p class="mt-2 line-clamp-2 text-sm leading-6 text-slate-500">{{ $service->short_description }}</p><a href="{{ route('services.show', $service) }}" class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-primary-700 transition group-hover:translate-x-1">Learn more →</a></div>
+    <div class="p-6"><h3 class="text-lg font-extrabold text-navy-900"><?php echo e($service->title); ?></h3><p class="mt-2 line-clamp-2 text-sm leading-6 text-slate-500"><?php echo e($service->short_description); ?></p><a href="<?php echo e(route('services.show', $service)); ?>" class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-primary-700 transition group-hover:translate-x-1">Learn more →</a></div>
 </div>
+<?php /**PATH C:\ITprojects\New folder\resources\views/components/service-card.blade.php ENDPATH**/ ?>

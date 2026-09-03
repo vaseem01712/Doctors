@@ -51,4 +51,4 @@ unset($__defined_vars, $__key, $__value); ?>
     </div>
     <div class="p-6"><h3 class="text-lg font-extrabold text-navy-900"><?php echo e($specialty->name); ?></h3><p class="mt-2 line-clamp-2 text-sm leading-6 text-slate-500"><?php echo e($specialty->description); ?></p><span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-primary-700 transition group-hover:translate-x-1">Explore specialty →</span></div>
 </a>
-<?php /**PATH C:\ITprojects\New folder\resources\views\components\specialty-card.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\ITprojects\New folder\resources\views/components/specialty-card.blade.php ENDPATH**/ ?>

@@ -24,7 +24,7 @@
                 <p class="mt-2">Try adjusting your search filters.</p>
             </div>
         @else
-            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+            <div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
                 @foreach ($doctors as $doctor)
                     <x-doctor-card :doctor="$doctor" />
                 @endforeach
