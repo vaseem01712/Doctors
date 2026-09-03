@@ -1,7 +1,7 @@
 <x-layouts.app>
+    <x-page-hero eyebrow="Our specialists" title="Find the right doctor for your care." description="Meet experienced specialists who combine clinical expertise with a more thoughtful patient experience." image="https://images.unsplash.com/photo-1559830772-0f0b0c3a0c8f?w=1100&q=85&auto=format&fit=crop" image-alt="Doctor in a modern clinic" />
     <section class="bg-primary-50/50 py-14">
         <div class="mx-auto max-w-7xl px-6">
-            <x-section-heading label="Doctors" centered>Find Your Doctor</x-section-heading>
 
             <form class="mt-8 grid gap-4 rounded-[28px] border border-slate-100 bg-white p-7 shadow-soft sm:grid-cols-4">
                 <input type="text" name="name" value="{{ request('name') }}" placeholder="Doctor name" class="input-field">

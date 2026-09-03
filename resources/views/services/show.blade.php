@@ -1,10 +1,6 @@
 <x-layouts.app>
-    <section class="bg-primary-50/50 py-16">
-        <div class="mx-auto max-w-4xl px-6 text-center">
-            <h1 class="section-heading">{{ $service->title }}</h1>
-            @if ($service->price) <p class="mt-3 text-2xl font-bold text-primary-600">₹{{ $service->price }}</p> @endif
-        </div>
-    </section>
+    <x-page-hero eyebrow="Care pathway" title="{{ $service->title }}" description="{{ $service->description }}" centered :meta="$service->price ? 'From ₹' . $service->price : null" />
+        <x-page-hero eyebrow="Care pathway" title="{{ $service->title }}" description="{{ $service->description }}" centered :meta="$service->price ? 'From ₹' . $service->price : null" />
     <section class="mx-auto max-w-4xl px-6 py-16">
         <div class="prose max-w-none text-slate-600">{!! nl2br(e($service->description)) !!}</div>
         <x-button :href="route('appointments.create')" class="mt-10">Book This Service</x-button>

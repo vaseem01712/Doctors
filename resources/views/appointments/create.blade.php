@@ -3,27 +3,7 @@
     {{-- =========================================================
         HERO
     ========================================================== --}}
-    <div class="page-hero relative isolate overflow-hidden">
-        <div class="absolute -left-24 top-10 -z-10 h-64 w-64 rounded-full bg-primary-200/30 blur-3xl"></div>
-        <div class="absolute -right-24 top-0 -z-10 h-72 w-72 rounded-full bg-accent-200/25 blur-3xl"></div>
-
-        <div class="container-shell relative py-14 sm:py-16 lg:py-20">
-
-            <x-section-heading
-                label="Appointment"
-                centered
-            >
-                Book Your Appointment
-            </x-section-heading>
-
-            <p class="section-copy mx-auto text-center">
-                Pick a specialty and doctor, choose a slot that works for you,
-                and we'll confirm within minutes.
-            </p>
-
-        </div>
-
-    </div>
+    <x-page-hero eyebrow="Appointment" title="Book your appointment." description="Pick a specialty and doctor, choose a slot that works for you, and we'll confirm within minutes." centered />
 
 
     {{-- =========================================================

@@ -3,7 +3,7 @@
     {{-- =========================
         ULTRA PREMIUM HERO
     ========================== --}}
-    <section class="relative isolate overflow-hidden mt-[-95px] bg-[#f7fbff]">
+    <section class="relative isolate overflow-hidden bg-[#f7fbff] pb-10 pt-8 sm:pt-10">
 
         {{-- Background --}}
         <div class="pointer-events-none absolute inset-0">
@@ -927,68 +927,211 @@
     {{-- =========================
         FINAL PREMIUM CTA
     ========================== --}}
-    <section class="relative isolate overflow-hidden bg-navy-900 py-28 text-white">
+<section class="relative isolate overflow-hidden bg-white py-28 sm:py-32">
 
-        <div class="absolute inset-0">
+    {{-- Premium Background --}}
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
 
-            <div class="absolute left-1/2 top-1/2 h-[600px] w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-600/20 blur-[150px]"></div>
-
-            <div class="absolute -left-20 bottom-0 h-80 w-80 rounded-full bg-accent-400/10 blur-[100px]"></div>
-
+        {{-- Soft primary glow --}}
+        <div class="absolute left-1/2 top-1/2 h-[650px] w-[650px]
+                    -translate-x-1/2 -translate-y-1/2
+                    rounded-full bg-primary-100/60 blur-[140px]">
         </div>
 
-        <div class="container-shell relative">
+        {{-- Accent glow --}}
+        <div class="absolute -right-32 -top-32 h-[420px] w-[420px]
+                    rounded-full bg-accent-100/70 blur-[120px]">
+        </div>
 
-            <div class="mx-auto max-w-4xl text-center">
+        {{-- Bottom glow --}}
+        <div class="absolute -bottom-40 -left-40 h-[450px] w-[450px]
+                    rounded-full bg-blue-50 blur-[120px]">
+        </div>
 
-                <span class="inline-flex rounded-full border border-white/10 bg-white/5 px-5 py-2 text-xs font-bold tracking-[0.2em] text-accent-400">
-                    YOUR NEXT STEP
-                </span>
+        {{-- Subtle grid --}}
+        <div class="absolute inset-0 opacity-[0.035]"
+             style="background-image: linear-gradient(#0f172a 1px, transparent 1px), linear-gradient(90deg, #0f172a 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
 
-                <h2 class="mt-8 text-5xl font-black tracking-[-0.05em] sm:text-6xl lg:text-7xl">
+    </div>
+
+
+    <div class="container-shell relative">
+
+        {{-- Premium CTA Card --}}
+        <div class="relative overflow-hidden rounded-[36px]
+                    border border-slate-200/80
+                    bg-white
+                    px-6 py-16
+                    shadow-[0_30px_100px_-35px_rgba(15,23,42,0.25)]
+                    sm:px-12 sm:py-20
+                    lg:px-20 lg:py-24">
+
+            {{-- Decorative circles --}}
+            <div class="pointer-events-none absolute -right-32 -top-32
+                        h-80 w-80 rounded-full
+                        border border-primary-100/70">
+            </div>
+
+            <div class="pointer-events-none absolute -right-20 -top-20
+                        h-56 w-56 rounded-full
+                        border border-primary-100/50">
+            </div>
+
+            <div class="pointer-events-none absolute -bottom-40 -left-40
+                        h-80 w-80 rounded-full
+                        border border-accent-100/60">
+            </div>
+
+
+            <div class="relative mx-auto max-w-4xl text-center">
+
+                {{-- Eyebrow --}}
+                <div class="mb-7 flex justify-center">
+
+                    <span class="inline-flex items-center gap-2
+                                 rounded-full
+                                 border border-primary-100
+                                 bg-primary-50/70
+                                 px-5 py-2.5
+                                 text-[11px] font-black
+                                 uppercase tracking-[0.22em]
+                                 text-primary-700">
+
+                        <span class="h-2 w-2 rounded-full bg-accent-400 shadow-[0_0_12px_rgba(0,0,0,0.15)]"></span>
+
+                        Your health, your next step
+
+                    </span>
+
+                </div>
+
+
+                {{-- Heading --}}
+                <h2 class="text-4xl font-black leading-[1.05]
+                           tracking-[-0.045em]
+                           text-slate-950
+                           sm:text-5xl
+                           lg:text-7xl">
 
                     Better healthcare
 
-                    <span class="block text-accent-400">
-                        starts here.
+                    <span class="block bg-gradient-to-r
+                                 from-primary-600
+                                 via-primary-500
+                                 to-accent-500
+                                 bg-clip-text text-transparent">
+                        starts with the right care.
                     </span>
 
                 </h2>
 
-                <p class="mx-auto mt-7 max-w-2xl text-lg leading-8 text-slate-400">
-                    Find the right specialist, choose the right time and take
-                    the next step towards better health.
+
+                {{-- Description --}}
+                <p class="mx-auto mt-7 max-w-2xl
+                          text-base leading-8
+                          text-slate-500
+                          sm:text-lg">
+
+                    Find the right specialist, choose a convenient time,
+                    and take a confident step towards better health.
+
                 </p>
 
-                <div class="mt-12 flex flex-wrap justify-center gap-4">
 
-                    <a
-                        href="{{ route('appointments.create') }}"
-                        class="group inline-flex items-center gap-3 rounded-2xl bg-accent-400 px-8 py-5 font-black text-navy-900 shadow-2xl shadow-black/20 transition hover:-translate-y-1 hover:scale-[1.02]"
-                    >
+                {{-- Buttons --}}
+<div class="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row">
 
-                        Book your appointment
+    {{-- Primary --}}
+    <a
+        href="{{ route('appointments.create') }}"
+        class="group inline-flex h-14 min-w-[220px] items-center justify-center gap-3
+               rounded-2xl
+               bg-slate-950
+               px-8
+               text-sm font-black
+               text-white
+               shadow-[0_18px_40px_-15px_rgba(15,23,42,0.45)]
+               transition-all duration-300
+               hover:-translate-y-1
+               hover:bg-primary-600
+               hover:shadow-[0_22px_45px_-15px_rgba(37,99,235,0.35)]"
+    >
 
-                        <span class="transition group-hover:translate-x-1 group-hover:-translate-y-1">
-                            ↗
+        <span>Book your appointment</span>
+
+        <span class="flex h-8 w-8 shrink-0 items-center justify-center
+                     rounded-full bg-white/10
+                     text-sm
+                     transition-all duration-300
+                     group-hover:translate-x-1
+                     group-hover:bg-white/20">
+            ↗
+        </span>
+
+    </a>
+
+
+    {{-- Secondary --}}
+    <a
+        href="{{ route('doctors.index') }}"
+        class="group inline-flex h-14 min-w-[190px] items-center justify-center gap-3
+               rounded-2xl
+               border border-slate-200
+               bg-white
+               px-8
+               text-sm font-bold
+               text-slate-800
+               shadow-[0_8px_25px_-12px_rgba(15,23,42,0.25)]
+               transition-all duration-300
+               hover:-translate-y-1
+               hover:border-primary-200
+               hover:bg-slate-50
+               hover:shadow-[0_18px_35px_-15px_rgba(15,99,224,0.2)]"
+    >
+
+        <span>Find a specialist</span>
+
+        <span class="transition-transform duration-300 group-hover:translate-x-1">
+            →
+        </span>
+
+    </a>
+
+</div>
+
+
+                {{-- Trust Points --}}
+                <div class="mt-12 flex flex-wrap items-center
+                            justify-center gap-x-8 gap-y-4
+                            border-t border-slate-100 pt-8
+                            text-xs font-semibold text-slate-400
+                            sm:text-sm">
+
+                    <span class="inline-flex items-center gap-2">
+                        <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                            ✓
                         </span>
+                        Easy booking
+                    </span>
 
-                    </a>
+                    <span class="hidden h-4 w-px bg-slate-200 sm:block"></span>
 
-                    <a
-                        href="{{ route('doctors.index') }}"
-                        class="rounded-2xl border border-white/15 bg-white/5 px-8 py-5 font-bold text-white transition hover:bg-white/10"
-                    >
-                        Find a specialist
-                    </a>
+                    <span class="inline-flex items-center gap-2">
+                        <span class="flex h-5 w-5 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                            ✓
+                        </span>
+                        Trusted specialists
+                    </span>
 
-                </div>
+                    <span class="hidden h-4 w-px bg-slate-200 sm:block"></span>
 
-                <div class="mt-12 flex flex-wrap justify-center gap-8 text-sm text-white/50">
-
-                    <span>✓ Easy booking</span>
-                    <span>✓ Trusted specialists</span>
-                    <span>✓ Secure healthcare</span>
+                    <span class="inline-flex items-center gap-2">
+                        <span class="flex h-5 w-5 items-center justify-center rounded-full bg-violet-50 text-violet-600">
+                            ✓
+                        </span>
+                        Secure healthcare
+                    </span>
 
                 </div>
 
@@ -996,6 +1139,8 @@
 
         </div>
 
-    </section>
+    </div>
+
+</section>
 
 </x-layouts.app>

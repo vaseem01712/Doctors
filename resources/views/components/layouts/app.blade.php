@@ -20,8 +20,10 @@
   @endif
 </head>
 <body class="font-sans">
-  <x-header />
-  <main>{{ $slot }}</main>
+  <main>
+    <x-header />
+    {{ $slot }}
+  </main>
   <x-footer />
 </body>
 </html>

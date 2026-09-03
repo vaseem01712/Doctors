@@ -1,8 +1,5 @@
 <x-layouts.app>
-    <section class="bg-primary-50/50 py-16 text-center">
-        <h1 class="section-heading">{{ $specialty->name }}</h1>
-        <p class="mx-auto mt-3 max-w-2xl text-slate-500">{{ $specialty->description }}</p>
-    </section>
+    <x-page-hero eyebrow="Specialty" title="{{ $specialty->name }}" description="{{ $specialty->description }}" centered />
     <section class="mx-auto max-w-7xl px-6 py-16">
         <h2 class="text-xl font-bold text-navy-900">Doctors</h2>
         <div class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">

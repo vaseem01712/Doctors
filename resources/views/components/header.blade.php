@@ -1,15 +1,15 @@
-<header
+﻿<header
     x-data="{ open: false, scrolled: false }"
     x-init="
         const updateScroll = () => scrolled = window.scrollY > 20;
         updateScroll();
         window.addEventListener('scroll', updateScroll);
     "
-    class="sticky top-0 z-50 px-3 pt-3 transition-all duration-500 sm:px-5"
+    class="relative z-50 h-[100px] px-3 pt-3 sm:px-5"
 >
     {{-- Floating Premium Navbar --}}
     <div
-        class="mx-auto max-w-[1440px] transition-all duration-500"
+         class="sticky top-0 z-50 mx-auto max-w-[1440px] transition-all duration-500"
         :class="
             scrolled
                 ? 'rounded-[24px] border border-slate-200/80 bg-white/85 shadow-[0_20px_70px_-25px_rgba(15,40,90,.25)] backdrop-blur-2xl'

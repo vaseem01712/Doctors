@@ -1,1 +1,1 @@
-{"version":2,"defects":[],"times":{"Tests\\Unit\\SanityTest::test_the_test_suite_is_configured":0.259}}
+{"version":2,"defects":{"Tests\\Feature\\ContactSubmissionTest::test_contact_form_submits_and_sends_email_to_business_address":7},"times":{"Tests\\Unit\\SanityTest::test_the_test_suite_is_configured":0.259,"Tests\\Feature\\ContactSubmissionTest::test_contact_form_submits_and_sends_email_to_business_address":0.344}}

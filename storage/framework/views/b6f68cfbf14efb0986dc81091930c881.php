@@ -2,16 +2,16 @@
 <footer class="relative overflow-hidden bg-navy-900 text-slate-300">
   <div class="absolute inset-0 grid-glow opacity-20"></div>
   <div class="container-shell relative py-16 lg:py-20">
-    <div class="mb-14 flex flex-col justify-between gap-8 rounded-[32px] border border-white/10 bg-white/[.04] p-7 sm:p-9 lg:flex-row lg:items-center">
+    <div class="mb-14 flex flex-col justify-between gap-8 rounded-[32px] border border-slate-200 bg-white/95 p-7 text-navy-900 shadow-[0_20px_70px_-35px_rgba(15,31,58,.32)] sm:p-9 lg:flex-row lg:items-center">
       <div>
-        <span class="section-label border-white/10 bg-white/10 text-accent-400">Stay informed</span>
-        <h3 class="mt-4 text-2xl font-extrabold tracking-tight text-white sm:text-3xl">Better health starts with better information.</h3>
-        <p class="mt-2 max-w-xl text-sm leading-6 text-slate-400">Get practical health insights, clinic updates and appointment reminders in your inbox.</p>
+        <span class="section-label border-primary-100 bg-primary-50 text-primary-700">Stay informed</span>
+        <h3 class="mt-4 text-2xl font-extrabold tracking-tight text-navy-900 sm:text-3xl">Better health starts with better information.</h3>
+        <p class="mt-2 max-w-xl text-sm leading-6 text-slate-500">Get practical health insights, clinic updates and appointment reminders in your inbox.</p>
       </div>
       <form action="<?php echo e(route('newsletter.store')); ?>" method="POST" class="flex w-full max-w-md gap-2">
         <?php echo csrf_field(); ?>
-        <input name="email" type="email" required placeholder="Your email address" class="min-w-0 flex-1 rounded-full border border-white/10 bg-white/10 px-5 py-3.5 text-sm text-white outline-none placeholder:text-slate-500 focus:border-accent-400">
-        <button class="rounded-full bg-accent-500 px-5 py-3.5 text-sm font-extrabold text-navy-900 transition hover:bg-accent-400">Subscribe</button>
+        <input name="email" type="email" required placeholder="Your email address" class="min-w-0 flex-1 rounded-full border border-slate-200 bg-slate-50 px-5 py-3.5 text-sm text-navy-900 outline-none placeholder:text-slate-400 focus:border-primary-400">
+        <button class="rounded-full bg-navy-900 px-5 py-3.5 text-sm font-extrabold text-white transition hover:bg-primary-600">Subscribe</button>
       </form>
     </div>
 
