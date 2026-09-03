@@ -18,15 +18,7 @@
                 <h1 class="mt-7 text-5xl font-extrabold leading-[.98] tracking-[-.065em] text-navy-900 sm:text-6xl lg:text-[76px]">Questions, <span class="text-primary-600">answered clearly.</span></h1>
                 <p class="mt-7 max-w-xl text-base leading-8 text-slate-500 sm:text-lg">Everything you need to know before booking your appointment, meeting your doctor or using your secure patient portal.</p>
             </div>
-            <div class="relative mx-auto w-full max-w-sm">
-                <div class="absolute -inset-4 rotate-3 rounded-[36px] bg-primary-100/70"></div>
-                <div class="relative rounded-[30px] border border-white bg-white/90 p-7 shadow-[0_30px_80px_-35px_rgba(7,28,64,.38)] backdrop-blur-xl sm:p-8">
-                    <div class="flex items-center justify-between"><div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-600 text-2xl font-black text-white shadow-lg shadow-primary-600/25">?</div><span class="rounded-full bg-accent-50 px-3 py-1.5 text-[10px] font-extrabold uppercase tracking-[.15em] text-accent-700">24/7 clarity</span></div>
-                    <p class="mt-7 text-xs font-extrabold uppercase tracking-[.18em] text-primary-600">MediCare support</p>
-                    <p class="mt-3 text-2xl font-extrabold leading-tight tracking-[-.04em] text-navy-900">The right answer is closer than you think.</p>
-                    <div class="mt-7 flex items-center gap-2 text-sm font-bold text-slate-500"><span class="eyebrow-dot"></span><span>Clear guidance, whenever you need it</span></div>
-                </div>
-            </div>
+            
         </div>
     </section>
 
@@ -70,4 +62,4 @@
 <?php $component = $__componentOriginal5863877a5171c196453bfa0bd807e410; ?>
 <?php unset($__componentOriginal5863877a5171c196453bfa0bd807e410); ?>
 <?php endif; ?>
-<?php /**PATH C:\ITprojects\New folder\resources\views\faq.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\ITprojects\New folder\resources\views/faq.blade.php ENDPATH**/ ?>

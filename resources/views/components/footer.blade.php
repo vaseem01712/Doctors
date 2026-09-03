@@ -35,6 +35,7 @@
           <li><a href="{{ route('doctors.index') }}" class="hover:text-white">Find a Doctor</a></li>
           <li><a href="{{ route('services.index') }}" class="hover:text-white">Services</a></li>
           <li><a href="{{ route('specialties.index') }}" class="hover:text-white">Specialties</a></li>
+          <li><a href="{{ route('faq') }}" class="hover:text-white">FAQ</a></li>
         </ul>
       </div>
       <div>
@@ -42,6 +43,7 @@
         <ul class="mt-5 space-y-3 text-sm text-slate-400">
           <li><a href="{{ route('contact') }}" class="hover:text-white">Contact</a></li>
           <li><a href="{{ route('blog.index') }}" class="hover:text-white">Health Insights</a></li>
+          <li><a href="{{ route('faq') }}" class="hover:text-white">Frequently Asked Questions</a></li>
           <li><a href="{{ route('appointments.create') }}" class="hover:text-white">Appointments</a></li>
           <li><a href="{{ route('login') }}" class="hover:text-white">Patient Login</a></li>
         </ul>

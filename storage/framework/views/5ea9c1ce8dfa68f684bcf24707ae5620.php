@@ -650,18 +650,32 @@
 
                 <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $doctors ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $doctor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
 
+                    <?php
+                        $doctorFallbacks = [
+                            'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&q=85&auto=format&fit=crop',
+                            'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=700&q=85&auto=format&fit=crop',
+                            'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=700&q=85&auto=format&fit=crop',
+                            'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=700&q=85&auto=format&fit=crop',
+                        ];
+                        $doctorImage = $doctor->photo
+                            ? asset('storage/' . ltrim($doctor->photo, '/'))
+                            : $doctorFallbacks[$loop->index % count($doctorFallbacks)];
+                    ?>
+
                     <a
                         href="<?php echo e(route('doctors.show', $doctor)); ?>"
-                        class="group overflow-hidden rounded-[32px] bg-white shadow-sm transition duration-500 hover:-translate-y-2 hover:shadow-[0_30px_70px_-25px_rgba(15,99,224,.25)]"
+                        class="group overflow-hidden rounded-[32px] border border-slate-200/70 bg-white shadow-[0_18px_55px_-30px_rgba(7,28,64,.3)] transition duration-500 hover:-translate-y-2 hover:border-primary-200 hover:shadow-[0_30px_70px_-25px_rgba(15,99,224,.25)]"
                     >
 
                         <div class="relative h-80 overflow-hidden bg-primary-50">
 
                             <img
-                                src="https://ui-avatars.com/api/?name=<?php echo e(urlencode($doctor->name)); ?>&background=0b1f3a&color=fff&size=700&bold=true"
+                                src="<?php echo e($doctorImage); ?>"
                                 alt="<?php echo e($doctor->name); ?>"
                                 class="h-full w-full object-cover transition duration-700 group-hover:scale-110"
                             >
+
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-900/55 via-transparent to-transparent"></div>
 
                             <div class="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1.5 text-xs font-bold text-navy-900 backdrop-blur">
                                 Available
@@ -741,196 +755,45 @@
 
             </div>
 
-            <div class="mt-16 grid gap-6 lg:grid-cols-3">
+            <?php
+                $testimonialItems = collect($testimonials ?? [])->map(fn ($testimonial) => [
+                    'quote' => $testimonial->content ?? $testimonial->message ?? 'Great healthcare experience.',
+                    'name' => $testimonial->name ?? 'Patient',
+                ]);
 
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__empty_1 = true; $__currentLoopData = $testimonials ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
+                if ($testimonialItems->isEmpty()) {
+                    $testimonialItems = collect([
+                        ['quote' => 'The booking experience was incredibly simple and the doctor was excellent.', 'name' => 'Aarav Sharma'],
+                        ['quote' => 'Beautiful clinic experience, thoughtful staff and genuinely modern care.', 'name' => 'Meera Kapoor'],
+                        ['quote' => 'I finally found a healthcare experience that feels designed for people.', 'name' => 'Rohan Verma'],
+                        ['quote' => 'The care team made every step feel calm, clear and genuinely personal.', 'name' => 'Ananya Singh'],
+                        ['quote' => 'A beautifully simple way to find excellent specialists and book care.', 'name' => 'Kabir Jain'],
+                        ['quote' => 'Modern, warm and professional from the first appointment to the last.', 'name' => 'Nisha Arora'],
+                    ]);
+                }
+            ?>
 
-                    <div class="rounded-[32px] border border-slate-100 bg-white p-8 shadow-sm transition duration-300 hover:-translate-y-2 hover:shadow-xl">
+            <div class="testimonial-slider mt-16">
+                <div class="relative overflow-hidden rounded-[38px] border border-slate-200/80 bg-[linear-gradient(135deg,#f7fbff,#ffffff_52%,#f0fbfa)] p-4 shadow-[0_28px_90px_-42px_rgba(7,28,64,.32)] sm:p-6">
+                    <div class="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary-100/70 blur-3xl"></div>
+                    <div class="pointer-events-none absolute -bottom-28 left-1/3 h-64 w-64 rounded-full bg-accent-100/60 blur-3xl"></div>
 
-                        <div class="flex gap-1 text-amber-400">
-                            ★★★★★
-                        </div>
-
-                        <p class="mt-7 text-lg font-semibold leading-8 text-navy-900">
-                            “<?php echo e($testimonial->content ?? $testimonial->message ?? 'Great healthcare experience.'); ?>”
-                        </p>
-
-                        <div class="mt-10 flex items-center gap-4">
-
-                            <div class="flex h-12 w-12 items-center justify-center rounded-full bg-primary-100 font-black text-primary-600">
-                                <?php echo e(strtoupper(substr($testimonial->name ?? 'P', 0, 1))); ?>
-
-                            </div>
-
-                            <div>
-
-                                <p class="font-extrabold text-navy-900">
-                                    <?php echo e($testimonial->name ?? 'Patient'); ?>
-
-                                </p>
-
-                                <p class="text-xs text-slate-400">
-                                    Verified patient
-                                </p>
-
-                            </div>
-
-                        </div>
-
+                    <div class="testimonial-marquee-track">
+                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $testimonialItems->concat($testimonialItems); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <article class="testimonial-marquee-card group relative flex min-h-[300px] shrink-0 flex-col justify-between overflow-hidden rounded-[28px] border border-white/90 bg-white/90 p-6 shadow-[0_18px_50px_-30px_rgba(7,28,64,.38)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_28px_65px_-30px_rgba(7,28,64,.42)] sm:p-8">
+                                <div>
+                                    <div class="flex items-center justify-between"><div class="flex gap-1 text-sm text-amber-400">★★★★★</div><span class="text-3xl font-black leading-none text-primary-100">“</span></div>
+                                    <p class="mt-7 text-lg font-bold leading-8 tracking-[-.02em] text-navy-900">“<?php echo e($testimonial['quote']); ?>”</p>
+                                </div>
+                                <div class="mt-8 flex items-center gap-3 border-t border-slate-100 pt-5"><span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary-50 font-black text-primary-700"><?php echo e(strtoupper(substr($testimonial['name'], 0, 1))); ?></span><div><p class="text-sm font-extrabold text-navy-900"><?php echo e($testimonial['name']); ?></p><p class="mt-0.5 text-xs font-semibold text-slate-400">Verified patient</p></div><span class="ml-auto text-xl text-accent-500">✓</span></div>
+                            </article>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
                     </div>
+                </div>
 
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-
-                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = [
-                        'The booking experience was incredibly simple and the doctor was excellent.',
-                        'Beautiful clinic experience, thoughtful staff and genuinely modern care.',
-                        'I finally found a healthcare experience that feels designed for people.'
-                    ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $quote): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-                        <div class="rounded-[32px] border border-slate-100 bg-white p-8 shadow-sm">
-
-                            <div class="text-amber-400">
-                                ★★★★★
-                            </div>
-
-                            <p class="mt-7 text-lg font-semibold leading-8 text-navy-900">
-                                “<?php echo e($quote); ?>”
-                            </p>
-
-                            <p class="mt-10 text-sm font-bold text-slate-500">
-                                Verified patient
-                            </p>
-
-                        </div>
-
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-
-            </div>
-
-        </div>
-
-    </section>
-
-    
-    <section
-        class="bg-slate-50 py-28"
-        x-data="{ open: null }"
-    >
-
-        <div class="container-shell grid gap-16 lg:grid-cols-[.8fr_1.2fr]">
-
-            <div>
-
-                <span class="section-label">
-                    FAQ
-                </span>
-
-                <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] text-navy-900 sm:text-5xl">
-
-                    Questions,
-
-                    <span class="text-primary-600">
-                        answered clearly.
-                    </span>
-
-                </h2>
-
-                <p class="mt-6 max-w-md text-lg leading-8 text-slate-500">
-                    Everything you need to know before booking your appointment.
-                </p>
-
-                <a
-                    href="<?php echo e(route('appointments.create')); ?>"
-                    class="mt-9 inline-flex rounded-2xl bg-navy-900 px-6 py-4 font-bold text-white transition hover:bg-primary-600"
-                >
-                    Book appointment →
-                </a>
-
-            </div>
-
-            <div class="space-y-4">
-
-                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__empty_1 = true; $__currentLoopData = ($faqs ?? collect()); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); $__empty_1 = false; ?>
-
-                    <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white transition hover:border-primary-100">
-
-                        <button
-                            type="button"
-                            @click="open = open === <?php echo e($i); ?> ? null : <?php echo e($i); ?>"
-                            class="flex w-full items-center justify-between gap-6 p-6 text-left font-extrabold text-navy-900"
-                        >
-
-                            <span>
-                                <?php echo e($faq->question); ?>
-
-                            </span>
-
-                            <span
-                                class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-50 text-xl text-primary-600"
-                                x-text="open === <?php echo e($i); ?> ? '−' : '+'"
-                            ></span>
-
-                        </button>
-
-                        <div
-                            x-show="open === <?php echo e($i); ?>"
-                            x-transition
-                            x-cloak
-                            class="px-6 pb-6 text-sm leading-7 text-slate-500"
-                        >
-                            <?php echo e($faq->answer); ?>
-
-                        </div>
-
-                    </div>
-
-                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); if ($__empty_1): ?>
-
-                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = [
-                        ['How do I book an appointment?', 'Choose a specialty, select your doctor, pick an available time and confirm your appointment online.'],
-                        ['Can I consult online?', 'Yes. Eligible specialists can provide online consultations through the appointment process.'],
-                        ['Can I change my appointment?', 'You can manage your upcoming appointment through your patient dashboard or contact support.'],
-                        ['Do you offer urgent care?', 'Our care team can guide you to the most suitable service based on your needs.']
-                    ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $i => $faq): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-
-                        <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white">
-
-                            <button
-                                type="button"
-                                @click="open = open === <?php echo e($i); ?> ? null : <?php echo e($i); ?>"
-                                class="flex w-full items-center justify-between gap-6 p-6 text-left font-extrabold text-navy-900"
-                            >
-
-                                <span>
-                                    <?php echo e($faq[0]); ?>
-
-                                </span>
-
-                                <span
-                                    class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-primary-50 text-xl text-primary-600"
-                                    x-text="open === <?php echo e($i); ?> ? '−' : '+'"
-                                ></span>
-
-                            </button>
-
-                            <div
-                                x-show="open === <?php echo e($i); ?>"
-                                x-transition
-                                x-cloak
-                                class="px-6 pb-6 text-sm leading-7 text-slate-500"
-                            >
-                                <?php echo e($faq[1]); ?>
-
-                            </div>
-
-                        </div>
-
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-
-                <?php endif; ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
-
+                <div class="mt-7 flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-2"><span class="flex h-2 w-2 animate-pulse rounded-full bg-accent-500"></span><span class="text-xs font-bold text-slate-500">Patient stories, always moving forward</span></div>
+                </div>
             </div>
 
         </div>

@@ -35,6 +35,7 @@
           <li><a href="<?php echo e(route('doctors.index')); ?>" class="hover:text-white">Find a Doctor</a></li>
           <li><a href="<?php echo e(route('services.index')); ?>" class="hover:text-white">Services</a></li>
           <li><a href="<?php echo e(route('specialties.index')); ?>" class="hover:text-white">Specialties</a></li>
+          <li><a href="<?php echo e(route('faq')); ?>" class="hover:text-white">FAQ</a></li>
         </ul>
       </div>
       <div>
@@ -42,6 +43,7 @@
         <ul class="mt-5 space-y-3 text-sm text-slate-400">
           <li><a href="<?php echo e(route('contact')); ?>" class="hover:text-white">Contact</a></li>
           <li><a href="<?php echo e(route('blog.index')); ?>" class="hover:text-white">Health Insights</a></li>
+          <li><a href="<?php echo e(route('faq')); ?>" class="hover:text-white">Frequently Asked Questions</a></li>
           <li><a href="<?php echo e(route('appointments.create')); ?>" class="hover:text-white">Appointments</a></li>
           <li><a href="<?php echo e(route('login')); ?>" class="hover:text-white">Patient Login</a></li>
         </ul>
