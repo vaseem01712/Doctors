@@ -48,4 +48,4 @@ unset($__defined_vars, $__key, $__value); ?>
         <span class="mt-5 inline-flex items-center gap-2 text-sm font-extrabold text-primary-700">Read article <span class="transition group-hover:translate-x-1">→</span></span>
     </div>
 </a>
-<?php /**PATH C:\ITprojects\New folder\resources\views\components\blog-card.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\ITprojects\New folder\resources\views/components/blog-card.blade.php ENDPATH**/ ?>

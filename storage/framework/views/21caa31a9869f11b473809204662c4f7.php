@@ -71,4 +71,4 @@
 <?php $component = $__componentOriginal5863877a5171c196453bfa0bd807e410; ?>
 <?php unset($__componentOriginal5863877a5171c196453bfa0bd807e410); ?>
 <?php endif; ?>
-<?php /**PATH C:\ITprojects\New folder\resources\views\blog\index.blade.php ENDPATH**/ ?>
+<?php /**PATH C:\ITprojects\New folder\resources\views/blog/index.blade.php ENDPATH**/ ?>
