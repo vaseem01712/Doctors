@@ -12,7 +12,7 @@
          class="sticky top-0 z-50 mx-auto max-w-[1440px] transition-all duration-500"
         :class="
             scrolled
-                ? 'rounded-[24px] border border-slate-200/80 bg-white/85 shadow-[0_20px_70px_-25px_rgba(15,40,90,.25)] backdrop-blur-2xl'
+                'rounded-[24px] border border-slate-200/80 bg-white shadow-[0_20px_70px_-25px_rgba(15,40,90,.25)] backdrop-blur-2xl'
                 : 'rounded-[24px] border border-transparent bg-white/45 backdrop-blur-xl'
         "
     >
