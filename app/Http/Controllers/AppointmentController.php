@@ -10,7 +10,6 @@ use App\Models\Doctor;
 use App\Models\Service;
 use App\Models\Specialty;
 use App\Models\User;
-use App\Notifications\AppointmentStatusNotification;
 use App\Services\AccountAccessService;
 use Illuminate\Database\QueryException;
 use Illuminate\Http\Request;
@@ -97,15 +96,21 @@ public function create(Request $request)
             throw $e;
         }
 
-        if ($createdPatient) {
-            try { $access->sendSetup($patient,'Patient Dashboard'); } catch (\Throwable $mailError) { report($mailError); }
-        }
-        $appointment->load(['doctor','service','patient']);
-        try {
-            Mail::to($patient->email)->send(new AppointmentConfirmationMail($appointment));
-        } catch (\Throwable $mailError) {
-            report($mailError);
-        }
+$accessUrl = null;
+try {
+    $accessUrl = $access->issueSetupToken($patient, $createdPatient ? 60 : 30);
+} catch (\Throwable $mailError) {
+    report($mailError);
+}
+
+$appointment->load(['doctor','service','patient']);
+try {
+    Mail::to($patient->email)->send(
+        new AppointmentConfirmationMail($appointment, $accessUrl, $createdPatient)
+    );
+} catch (\Throwable $mailError) {
+    report($mailError);
+}
 
         if ($doctor->user) {
             Notification::create([
@@ -116,12 +121,16 @@ public function create(Request $request)
                 'action_url' => route('doctor.appointments'),
             ]);
 
-            if ($doctor->user->email) {
-                try {
-                    Mail::to($doctor->user->email)->send(new DoctorAppointmentMail($appointment));
-                } catch (\Throwable $mailError) {
-                    report($mailError);
-                }
+        }
+
+        // A doctor may have a portal account or only a profile email. In both
+        // cases the selected doctor must receive the new booking notification.
+        $doctorEmail = $doctor->user?->email ?: $doctor->email;
+        if ($doctorEmail) {
+            try {
+                Mail::to($doctorEmail)->send(new DoctorAppointmentMail($appointment));
+            } catch (\Throwable $mailError) {
+                report($mailError);
             }
         }
 

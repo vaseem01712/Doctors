@@ -1,0 +1,1029 @@
+<?php if (isset($component)) { $__componentOriginal5863877a5171c196453bfa0bd807e410 = $component; } ?>
+<?php if (isset($attributes)) { $__attributesOriginal5863877a5171c196453bfa0bd807e410 = $attributes; } ?>
+<?php $component = Illuminate\View\AnonymousComponent::resolve(['view' => 'components.layouts.app','data' => []] + (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag ? $attributes->all() : [])); ?>
+<?php $component->withName('layouts.app'); ?>
+<?php if ($component->shouldRender()): ?>
+<?php $__env->startComponent($component->resolveView(), $component->data()); ?>
+<?php if (isset($attributes) && $attributes instanceof Illuminate\View\ComponentAttributeBag): ?>
+<?php $attributes = $attributes->except(\Illuminate\View\AnonymousComponent::ignoredParameterNames()); ?>
+<?php endif; ?>
+<?php $component->withAttributes([]); ?>
+
+    
+    <section class="relative isolate overflow-hidden bg-[#f7fbff] pb-10 pt-8 sm:pt-10">
+
+        
+        <div class="pointer-events-none absolute inset-0">
+            <div
+                class="absolute inset-0 opacity-[0.30]"
+                style="background-image: radial-gradient(#0f63e0 1px, transparent 1px); background-size: 30px 30px;"
+            ></div>
+
+            <div class="absolute -left-40 top-0 h-[500px] w-[500px] rounded-full bg-blue-400/20 blur-[120px]"></div>
+            <div class="absolute right-0 top-20 h-[450px] w-[450px] rounded-full bg-cyan-300/20 blur-[120px]"></div>
+        </div>
+
+        <div class="container-shell relative grid items-center gap-16 pb-28 pt-16 lg:grid-cols-[1fr_.9fr] lg:pb-36 lg:pt-24">
+
+            
+            <div>
+
+                <div class="inline-flex items-center gap-3 rounded-full border border-blue-100 bg-white/80 px-4 py-2 text-sm font-bold text-primary-600 shadow-lg shadow-blue-100/40 backdrop-blur-xl">
+
+                    <span class="relative flex h-2.5 w-2.5">
+                        <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-green-400 opacity-75"></span>
+                        <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500"></span>
+                    </span>
+
+                    Trusted healthcare experience
+                </div>
+
+                <h1 class="mt-8 max-w-4xl text-5xl font-black leading-[0.95] tracking-[-0.06em] text-navy-900 sm:text-6xl lg:text-[82px]">
+
+                    Healthcare that
+
+                    <span class="relative inline-block text-primary-600">
+                        feels personal.
+
+                        <svg
+                            class="absolute -bottom-3 left-0 w-full"
+                            viewBox="0 0 300 20"
+                            fill="none"
+                        >
+                            <path
+                                d="M5 15 C80 2 210 2 295 15"
+                                stroke="currentColor"
+                                stroke-width="4"
+                                stroke-linecap="round"
+                            />
+                        </svg>
+                    </span>
+
+                </h1>
+
+                <p class="mt-8 max-w-xl text-lg leading-8 text-slate-500 lg:text-xl">
+                    Find exceptional specialists, book appointments effortlessly
+                    and experience a better standard of modern healthcare.
+                </p>
+
+                <div class="mt-10 flex flex-wrap gap-4">
+
+                    <a
+                        href="<?php echo e(route('appointments.create')); ?>"
+                        class="group inline-flex items-center gap-3 rounded-2xl bg-primary-600 px-7 py-4 font-bold text-white shadow-xl shadow-primary-600/30 transition duration-300 hover:-translate-y-1 hover:bg-primary-700 hover:shadow-2xl"
+                    >
+                        Book appointment
+
+                        <span class="transition duration-300 group-hover:translate-x-1 group-hover:-translate-y-1">
+                            ↗
+                        </span>
+                    </a>
+
+                    <a
+                        href="<?php echo e(route('doctors.index')); ?>"
+                        class="inline-flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-7 py-4 font-bold text-navy-900 shadow-lg shadow-slate-200/40 transition duration-300 hover:-translate-y-1 hover:border-primary-200 hover:shadow-xl"
+                    >
+                        Explore specialists
+
+                        <span>→</span>
+                    </a>
+
+                </div>
+
+                
+                <div class="mt-12 flex flex-wrap items-center gap-6">
+
+                    <div class="flex -space-x-3">
+
+                        <img
+                            class="h-11 w-11 rounded-full border-2 border-white object-cover"
+                            src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&q=80"
+                            alt="Patient"
+                        >
+
+                        <img
+                            class="h-11 w-11 rounded-full border-2 border-white object-cover"
+                            src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&q=80"
+                            alt="Patient"
+                        >
+
+                        <img
+                            class="h-11 w-11 rounded-full border-2 border-white object-cover"
+                            src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&q=80"
+                            alt="Patient"
+                        >
+
+                    </div>
+
+                    <div>
+                        <div class="flex items-center gap-1 text-amber-400">
+                            ★★★★★
+                        </div>
+
+                        <p class="mt-1 text-sm font-bold text-navy-900">
+                            Trusted by our patients
+                        </p>
+                    </div>
+
+                    <div class="hidden h-10 w-px bg-slate-200 sm:block"></div>
+
+                    <div>
+                        <p class="text-2xl font-black text-navy-900">
+                            250+
+                        </p>
+
+                        <p class="text-xs font-semibold text-slate-400">
+                            Expert specialists
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+            
+            <div class="relative min-h-[600px]">
+
+                <div class="absolute inset-10 rounded-[48px] bg-gradient-to-br from-primary-100 via-white to-cyan-100 blur-sm"></div>
+
+                <div class="absolute inset-x-8 bottom-0 top-8 overflow-hidden rounded-[42px] border border-white/70 bg-white shadow-[0_40px_100px_-35px_rgba(15,99,224,.45)]">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1550831107-1553da8c8464?w=1200&q=90&auto=format&fit=crop"
+                        alt="Modern healthcare"
+                        class="h-full w-full object-cover"
+                    >
+
+                    <div class="absolute inset-0 bg-gradient-to-t from-navy-900/50 via-transparent to-white/10"></div>
+
+                </div>
+
+                <div class="absolute left-0 top-16 rounded-3xl border border-white/80 bg-white/90 p-5 shadow-2xl backdrop-blur-xl">
+
+                    <div class="flex items-center gap-4">
+
+                        <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-green-50 text-xl text-green-600">
+                            ✓
+                        </div>
+
+                        <div>
+                            <p class="text-xs font-bold text-slate-400">
+                                Live availability
+                            </p>
+
+                            <p class="mt-1 font-extrabold text-navy-900">
+                                Doctors online now
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="absolute bottom-14 right-0 rounded-3xl border border-white/70 bg-white/95 p-5 shadow-2xl backdrop-blur-xl">
+
+                    <p class="text-xs font-bold text-slate-400">
+                        Patient satisfaction
+                    </p>
+
+                    <div class="mt-2 flex items-end gap-3">
+
+                        <span class="text-4xl font-black text-navy-900">
+                            98%
+                        </span>
+
+                        <span class="mb-1 rounded-full bg-green-50 px-3 py-1 text-xs font-bold text-green-600">
+                            Excellent
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        
+        <div class="container-shell relative mb-12">
+
+            <form
+                action="<?php echo e(route('doctors.index')); ?>"
+                class="grid gap-3 rounded-[32px] border border-white bg-white/90 p-4 shadow-[0_30px_100px_-30px_rgba(15,40,90,.25)] backdrop-blur-xl md:grid-cols-[1.2fr_1fr_1fr_auto]"
+            >
+
+                <div class="flex items-center gap-4 rounded-2xl bg-slate-50 px-5">
+
+                    <span class="text-xl text-primary-600">⌕</span>
+
+                    <input
+                        type="text"
+                        name="name"
+                        class="w-full bg-transparent py-4 text-sm font-semibold outline-none"
+                        placeholder="Search doctor..."
+                    >
+
+                </div>
+
+                <select
+                    name="specialty"
+                    class="rounded-2xl border-0 bg-slate-50 px-5 py-4 text-sm font-semibold outline-none"
+                >
+                    <option value="">All specialties</option>
+
+                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $specialties ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $specialty): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                        <option value="<?php echo e($specialty->slug); ?>">
+                            <?php echo e($specialty->name); ?>
+
+                        </option>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+
+                </select>
+
+                <input
+                    type="text"
+                    name="location"
+                    class="rounded-2xl border-0 bg-slate-50 px-5 py-4 text-sm font-semibold outline-none"
+                    placeholder="Your location"
+                >
+
+                <button
+                    type="submit"
+                    class="rounded-2xl bg-primary-600 px-7 py-4 font-bold text-white shadow-lg shadow-primary-600/25 transition hover:-translate-y-0.5 hover:bg-primary-700"
+                >
+                    Find doctor ↗
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+    
+    <section class="bg-white pb-28 pt-36">
+
+        <div class="container-shell">
+
+            <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+
+                <div>
+
+                    <span class="section-label">
+                        EXPLORE SPECIALTIES
+                    </span>
+
+                    <h2 class="mt-5 max-w-2xl text-4xl font-black tracking-[-0.04em] text-navy-900 sm:text-5xl">
+
+                        Expert care for every
+
+                        <span class="text-primary-600">
+                            health journey.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+                <a
+                    href="<?php echo e(route('specialties.index')); ?>"
+                    class="group inline-flex items-center gap-2 font-bold text-primary-600"
+                >
+                    Explore all specialties
+
+                    <span class="transition group-hover:translate-x-2">
+                        →
+                    </span>
+                </a>
+
+            </div>
+
+            <div class="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+
+                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $specialties ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $specialty): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                    <a
+                        href="<?php echo e(route('specialties.show', $specialty)); ?>"
+                        class="group relative overflow-hidden rounded-[30px] border border-slate-100 bg-white p-7 shadow-sm transition duration-500 hover:-translate-y-2 hover:border-primary-100 hover:shadow-[0_30px_70px_-30px_rgba(15,99,224,.3)]"
+                    >
+
+                        <div class="absolute -right-10 -top-10 h-32 w-32 rounded-full bg-primary-100/50 blur-2xl transition duration-500 group-hover:scale-150"></div>
+
+                        <div class="relative flex h-14 w-14 items-center justify-center rounded-2xl bg-primary-50 text-2xl text-primary-600 transition duration-500 group-hover:rotate-6 group-hover:bg-primary-600 group-hover:text-white">
+                            ✦
+                        </div>
+
+                        <h3 class="relative mt-7 text-xl font-extrabold text-navy-900">
+                            <?php echo e($specialty->name); ?>
+
+                        </h3>
+
+                        <p class="relative mt-3 line-clamp-2 text-sm leading-6 text-slate-500">
+                            <?php echo e($specialty->description ?? 'Personalized healthcare designed around your individual needs.'); ?>
+
+                        </p>
+
+                        <div class="relative mt-7 flex items-center justify-between text-sm font-bold text-primary-600">
+
+                            Explore care
+
+                            <span class="text-lg transition duration-300 group-hover:translate-x-2">
+                                →
+                            </span>
+
+                        </div>
+
+                    </a>
+
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section class="relative overflow-hidden bg-slate-50 py-28">
+
+        <div class="absolute left-0 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary-100/40 blur-[100px]"></div>
+
+        <div class="container-shell relative grid items-center gap-16 lg:grid-cols-[.9fr_1.1fr]">
+
+            <div class="relative">
+
+                <div class="overflow-hidden rounded-[42px] shadow-2xl">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1584982751601-97dcc096659c?w=1200&q=90&auto=format&fit=crop"
+                        alt="Modern medical care"
+                        class="h-[580px] w-full object-cover"
+                    >
+
+                </div>
+
+                <div class="absolute bottom-6 left-6 right-6 rounded-[28px] border border-white/20 bg-navy-900/90 p-6 text-white backdrop-blur-xl">
+
+                    <div class="flex items-center justify-between">
+
+                        <div>
+                            <p class="text-sm text-white/60">
+                                Patient satisfaction
+                            </p>
+
+                            <p class="mt-1 text-3xl font-black">
+                                98%
+                            </p>
+                        </div>
+
+                        <div class="text-right">
+
+                            <p class="text-sm font-bold text-accent-400">
+                                Exceptional care
+                            </p>
+
+                            <p class="mt-2 text-xs text-white/50">
+                                Trusted healthcare experience
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                    <div class="mt-5 h-2 overflow-hidden rounded-full bg-white/10">
+                        <div class="h-full w-[98%] rounded-full bg-accent-400"></div>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div>
+
+                <span class="section-label">
+                    WHY MEDICARE
+                </span>
+
+                <h2 class="mt-5 max-w-2xl text-4xl font-black tracking-[-0.04em] text-navy-900 sm:text-5xl">
+
+                    A smarter way to
+
+                    <span class="text-primary-600">
+                        experience healthcare.
+                    </span>
+
+                </h2>
+
+                <p class="mt-6 max-w-xl text-lg leading-8 text-slate-500">
+                    Every part of your healthcare journey is designed to feel
+                    simpler, faster and more personal.
+                </p>
+
+                <div class="mt-10 grid gap-4 sm:grid-cols-2">
+
+                    <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = [
+                        ['01','Human-first care','Specialists who listen and understand your needs.'],
+                        ['02','Modern medicine','Technology and evidence-led healthcare together.'],
+                        ['03','Simple access','Find, book and manage appointments effortlessly.'],
+                        ['04','Always connected','Support whenever and wherever you need it.']
+                    ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $feature): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                        <div class="group rounded-[26px] border border-slate-200 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-primary-100 hover:shadow-xl">
+
+                            <span class="text-xs font-black tracking-[0.2em] text-primary-600">
+                                <?php echo e($feature[0]); ?>
+
+                            </span>
+
+                            <h3 class="mt-4 text-lg font-extrabold text-navy-900">
+                                <?php echo e($feature[1]); ?>
+
+                            </h3>
+
+                            <p class="mt-3 text-sm leading-6 text-slate-500">
+                                <?php echo e($feature[2]); ?>
+
+                            </p>
+
+                        </div>
+
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+
+                </div>
+
+                <a
+                    href="<?php echo e(route('services.index')); ?>"
+                    class="mt-10 inline-flex items-center gap-3 rounded-2xl bg-navy-900 px-7 py-4 font-bold text-white transition hover:-translate-y-1 hover:bg-primary-600"
+                >
+                    Discover our care
+                    <span>↗</span>
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section class="relative overflow-hidden bg-navy-900 py-28 text-white">
+
+        <div
+            class="absolute inset-0 opacity-30"
+            style="background-image: radial-gradient(rgba(255,255,255,.15) 1px, transparent 1px); background-size: 30px 30px;"
+        ></div>
+
+        <div class="container-shell relative">
+
+            <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+
+                <div>
+
+                    <span class="inline-flex rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-bold tracking-widest text-accent-400">
+                        OUR SERVICES
+                    </span>
+
+                    <h2 class="mt-6 max-w-2xl text-4xl font-black tracking-[-0.04em] sm:text-5xl">
+
+                        Everything you need.
+
+                        <span class="text-accent-400">
+                            All in one place.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+                <a
+                    href="<?php echo e(route('services.index')); ?>"
+                    class="rounded-2xl border border-white/15 bg-white/5 px-6 py-3 font-bold transition hover:bg-white/10"
+                >
+                    View all services →
+                </a>
+
+            </div>
+
+            <div class="mt-16 grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+
+                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $services ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $service): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                    <a
+                        href="<?php echo e(route('services.show', $service)); ?>"
+                        class="group relative overflow-hidden rounded-[32px] border border-white/10 bg-white/[0.04] p-8 backdrop-blur-sm transition duration-500 hover:-translate-y-2 hover:border-accent-400/40 hover:bg-white/[0.08]"
+                    >
+
+                        <div class="absolute -right-10 -top-10 h-40 w-40 rounded-full bg-primary-500/10 blur-3xl transition group-hover:scale-150"></div>
+
+                        <div class="relative flex items-start justify-between">
+
+                            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-white/10 text-2xl text-accent-400 transition group-hover:bg-accent-400 group-hover:text-navy-900">
+                                ✦
+                            </div>
+
+                            <span class="text-2xl text-white/30 transition group-hover:text-accent-400">
+                                ↗
+                            </span>
+
+                        </div>
+
+                        <h3 class="relative mt-10 text-2xl font-extrabold">
+                            <?php echo e($service->title); ?>
+
+                        </h3>
+
+                        <p class="relative mt-4 text-sm leading-7 text-slate-400">
+                            <?php echo e($service->short_description ?? ''); ?>
+
+                        </p>
+
+                        <div class="relative mt-8 font-bold text-accent-400">
+                            Learn more →
+                        </div>
+
+                    </a>
+
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section class="bg-white py-32">
+
+        <div class="container-shell">
+
+            <div class="mx-auto max-w-3xl text-center">
+
+                <span class="section-label">
+                    HOW IT WORKS
+                </span>
+
+                <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] text-navy-900 sm:text-5xl">
+
+                    Healthcare made
+
+                    <span class="text-primary-600">
+                        beautifully simple.
+                    </span>
+
+                </h2>
+
+            </div>
+
+            <div class="relative mt-20 grid gap-8 lg:grid-cols-4">
+
+                <div class="absolute left-[12%] right-[12%] top-10 hidden h-px bg-gradient-to-r from-transparent via-primary-200 to-transparent lg:block"></div>
+
+                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = [
+                    ['01','Choose a specialty','Tell us what kind of care you need.'],
+                    ['02','Pick your doctor','Compare trusted specialists and profiles.'],
+                    ['03','Choose a time','Select the appointment time that works for you.'],
+                    ['04','Start your care','Confirm your appointment and you are ready.']
+                ]; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $step): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                    <div class="relative text-center">
+
+                        <div class="relative z-10 mx-auto flex h-20 w-20 items-center justify-center rounded-[28px] bg-white text-lg font-black text-primary-600 shadow-[0_20px_50px_-20px_rgba(15,99,224,.35)] ring-1 ring-primary-100">
+                            <?php echo e($step[0]); ?>
+
+                        </div>
+
+                        <h3 class="mt-8 text-xl font-extrabold text-navy-900">
+                            <?php echo e($step[1]); ?>
+
+                        </h3>
+
+                        <p class="mx-auto mt-3 max-w-[240px] text-sm leading-6 text-slate-500">
+                            <?php echo e($step[2]); ?>
+
+                        </p>
+
+                    </div>
+
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section class="bg-slate-50 py-28">
+
+        <div class="container-shell">
+
+            <div class="flex flex-col justify-between gap-8 md:flex-row md:items-end">
+
+                <div>
+
+                    <span class="section-label">
+                        OUR SPECIALISTS
+                    </span>
+
+                    <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] text-navy-900 sm:text-5xl">
+
+                        Meet the experts behind
+
+                        <span class="text-primary-600">
+                            exceptional care.
+                        </span>
+
+                    </h2>
+
+                </div>
+
+                <a
+                    href="<?php echo e(route('doctors.index')); ?>"
+                    class="font-bold text-primary-600"
+                >
+                    View all doctors →
+                </a>
+
+            </div>
+
+            <div class="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+
+                <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $doctors ?? []; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $doctor): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                    <?php
+                        $doctorFallbacks = [
+                            'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=700&q=85&auto=format&fit=crop',
+                            'https://images.unsplash.com/photo-1594824476967-48c8b964273f?w=700&q=85&auto=format&fit=crop',
+                            'https://images.unsplash.com/photo-1537368910025-700350fe46c7?w=700&q=85&auto=format&fit=crop',
+                            'https://images.unsplash.com/photo-1582750433449-648ed127bb54?w=700&q=85&auto=format&fit=crop',
+                        ];
+                        $doctorImage = $doctor->photo
+                            ? asset('storage/' . ltrim($doctor->photo, '/'))
+                            : $doctorFallbacks[$loop->index % count($doctorFallbacks)];
+                    ?>
+
+                    <a
+                        href="<?php echo e(route('doctors.show', $doctor)); ?>"
+                        class="group overflow-hidden rounded-[32px] border border-slate-200/70 bg-white shadow-[0_18px_55px_-30px_rgba(7,28,64,.3)] transition duration-500 hover:-translate-y-2 hover:border-primary-200 hover:shadow-[0_30px_70px_-25px_rgba(15,99,224,.25)]"
+                    >
+
+                        <div class="relative h-80 overflow-hidden bg-primary-50">
+
+                            <img
+                                src="<?php echo e($doctorImage); ?>"
+                                alt="<?php echo e($doctor->name); ?>"
+                                class="h-full w-full object-cover transition duration-700 group-hover:scale-110"
+                            >
+
+                            <div class="pointer-events-none absolute inset-0 bg-gradient-to-t from-navy-900/55 via-transparent to-transparent"></div>
+
+                            <div class="absolute left-5 top-5 rounded-full bg-white/90 px-3 py-1.5 text-xs font-bold text-navy-900 backdrop-blur">
+                                Available
+                            </div>
+
+                            <div class="absolute bottom-5 left-5 right-5 flex items-center justify-between rounded-2xl bg-navy-900/90 px-4 py-3 text-white backdrop-blur-xl">
+
+                                <span class="text-xs text-white/60">
+                                    Patient rating
+                                </span>
+
+                                <span class="font-black text-accent-400">
+                                    ★ <?php echo e($doctor->rating ?? '5.0'); ?>
+
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                        <div class="p-6">
+
+                            <h3 class="text-xl font-extrabold text-navy-900">
+                                <?php echo e($doctor->name); ?>
+
+                            </h3>
+
+                            <p class="mt-2 text-sm font-bold text-primary-600">
+                                <?php echo e($doctor->specialty->name ?? 'Specialist'); ?>
+
+                            </p>
+
+                            <div class="mt-5 flex items-center justify-between border-t border-slate-100 pt-4">
+
+                                <span class="text-xs font-semibold text-slate-400">
+                                    <?php echo e($doctor->experience_years ?? '0'); ?>+ years experience
+                                </span>
+
+                                <span class="text-primary-600">
+                                    →
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </a>
+
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    
+    <section class="bg-white py-28">
+
+        <div class="container-shell">
+
+            <div class="mx-auto max-w-3xl text-center">
+
+                <span class="section-label">
+                    PATIENT STORIES
+                </span>
+
+                <h2 class="mt-5 text-4xl font-black tracking-[-0.04em] text-navy-900 sm:text-5xl">
+
+                    Care people
+
+                    <span class="text-primary-600">
+                        genuinely remember.
+                    </span>
+
+                </h2>
+
+            </div>
+
+            <?php
+                $testimonialItems = collect($testimonials ?? [])->map(fn ($testimonial) => [
+                    'quote' => $testimonial->content ?? $testimonial->message ?? 'Great healthcare experience.',
+                    'name' => $testimonial->name ?? 'Patient',
+                ]);
+
+                if ($testimonialItems->isEmpty()) {
+                    $testimonialItems = collect([
+                        ['quote' => 'The booking experience was incredibly simple and the doctor was excellent.', 'name' => 'Aarav Sharma'],
+                        ['quote' => 'Beautiful clinic experience, thoughtful staff and genuinely modern care.', 'name' => 'Meera Kapoor'],
+                        ['quote' => 'I finally found a healthcare experience that feels designed for people.', 'name' => 'Rohan Verma'],
+                        ['quote' => 'The care team made every step feel calm, clear and genuinely personal.', 'name' => 'Ananya Singh'],
+                        ['quote' => 'A beautifully simple way to find excellent specialists and book care.', 'name' => 'Kabir Jain'],
+                        ['quote' => 'Modern, warm and professional from the first appointment to the last.', 'name' => 'Nisha Arora'],
+                    ]);
+                }
+            ?>
+
+            <div class="testimonial-slider mt-16">
+                <div class="relative overflow-hidden rounded-[38px] border border-slate-200/80 bg-[linear-gradient(135deg,#f7fbff,#ffffff_52%,#f0fbfa)] p-4 shadow-[0_28px_90px_-42px_rgba(7,28,64,.32)] sm:p-6">
+                    <div class="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-primary-100/70 blur-3xl"></div>
+                    <div class="pointer-events-none absolute -bottom-28 left-1/3 h-64 w-64 rounded-full bg-accent-100/60 blur-3xl"></div>
+
+                    <div class="testimonial-marquee-track">
+                        <?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if BLOCK]><![endif]--><?php endif; ?><?php $__currentLoopData = $testimonialItems->concat($testimonialItems); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $testimonial): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                            <article class="testimonial-marquee-card group relative flex min-h-[300px] shrink-0 flex-col justify-between overflow-hidden rounded-[28px] border border-white/90 bg-white/90 p-6 shadow-[0_18px_50px_-30px_rgba(7,28,64,.38)] transition duration-500 hover:-translate-y-1 hover:shadow-[0_28px_65px_-30px_rgba(7,28,64,.42)] sm:p-8">
+                                <div>
+                                    <div class="flex items-center justify-between"><div class="flex gap-1 text-sm text-amber-400">★★★★★</div><span class="text-3xl font-black leading-none text-primary-100">“</span></div>
+                                    <p class="mt-7 text-lg font-bold leading-8 tracking-[-.02em] text-navy-900">“<?php echo e($testimonial['quote']); ?>”</p>
+                                </div>
+                                <div class="mt-8 flex items-center gap-3 border-t border-slate-100 pt-5"><span class="flex h-11 w-11 items-center justify-center rounded-2xl bg-primary-50 font-black text-primary-700"><?php echo e(strtoupper(substr($testimonial['name'], 0, 1))); ?></span><div><p class="text-sm font-extrabold text-navy-900"><?php echo e($testimonial['name']); ?></p><p class="mt-0.5 text-xs font-semibold text-slate-400">Verified patient</p></div><span class="ml-auto text-xl text-accent-500">✓</span></div>
+                            </article>
+                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?><?php if(\Livewire\Mechanisms\ExtendBlade\ExtendBlade::isRenderingLivewireComponent()): ?><!--[if ENDBLOCK]><![endif]--><?php endif; ?>
+                    </div>
+                </div>
+
+                <div class="mt-7 flex items-center justify-between gap-4">
+                    <div class="flex items-center gap-2"><span class="flex h-2 w-2 animate-pulse rounded-full bg-accent-500"></span><span class="text-xs font-bold text-slate-500">Patient stories, always moving forward</span></div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    
+<section class="relative isolate overflow-hidden bg-white py-28 sm:py-32">
+
+    
+    <div class="pointer-events-none absolute inset-0 overflow-hidden">
+
+        
+        <div class="absolute left-1/2 top-1/2 h-[650px] w-[650px]
+                    -translate-x-1/2 -translate-y-1/2
+                    rounded-full bg-primary-100/60 blur-[140px]">
+        </div>
+
+        
+        <div class="absolute -right-32 -top-32 h-[420px] w-[420px]
+                    rounded-full bg-accent-100/70 blur-[120px]">
+        </div>
+
+        
+        <div class="absolute -bottom-40 -left-40 h-[450px] w-[450px]
+                    rounded-full bg-blue-50 blur-[120px]">
+        </div>
+
+        
+        <div class="absolute inset-0 opacity-[0.035]"
+             style="background-image: linear-gradient(#0f172a 1px, transparent 1px), linear-gradient(90deg, #0f172a 1px, transparent 1px); background-size: 50px 50px;">
+        </div>
+
+    </div>
+
+
+    <div class="container-shell relative">
+
+        
+        <div class="relative overflow-hidden rounded-[36px]
+                    border border-slate-200/80
+                    bg-white
+                    px-6 py-16
+                    shadow-[0_30px_100px_-35px_rgba(15,23,42,0.25)]
+                    sm:px-12 sm:py-20
+                    lg:px-20 lg:py-24">
+
+            
+            <div class="pointer-events-none absolute -right-32 -top-32
+                        h-80 w-80 rounded-full
+                        border border-primary-100/70">
+            </div>
+
+            <div class="pointer-events-none absolute -right-20 -top-20
+                        h-56 w-56 rounded-full
+                        border border-primary-100/50">
+            </div>
+
+            <div class="pointer-events-none absolute -bottom-40 -left-40
+                        h-80 w-80 rounded-full
+                        border border-accent-100/60">
+            </div>
+
+
+            <div class="relative mx-auto max-w-4xl text-center">
+
+                
+                <div class="mb-7 flex justify-center">
+
+                    <span class="inline-flex items-center gap-2
+                                 rounded-full
+                                 border border-primary-100
+                                 bg-primary-50/70
+                                 px-5 py-2.5
+                                 text-[11px] font-black
+                                 uppercase tracking-[0.22em]
+                                 text-primary-700">
+
+                        <span class="h-2 w-2 rounded-full bg-accent-400 shadow-[0_0_12px_rgba(0,0,0,0.15)]"></span>
+
+                        Your health, your next step
+
+                    </span>
+
+                </div>
+
+
+                
+                <h2 class="text-4xl font-black leading-[1.05]
+                           tracking-[-0.045em]
+                           text-slate-950
+                           sm:text-5xl
+                           lg:text-7xl">
+
+                    Better healthcare
+
+                    <span class="block bg-gradient-to-r
+                                 from-primary-600
+                                 via-primary-500
+                                 to-accent-500
+                                 bg-clip-text text-transparent">
+                        starts with the right care.
+                    </span>
+
+                </h2>
+
+
+                
+                <p class="mx-auto mt-7 max-w-2xl
+                          text-base leading-8
+                          text-slate-500
+                          sm:text-lg">
+
+                    Find the right specialist, choose a convenient time,
+                    and take a confident step towards better health.
+
+                </p>
+
+
+                
+<div class="mt-11 flex flex-col items-center justify-center gap-4 sm:flex-row">
+
+    
+    <a
+        href="<?php echo e(route('appointments.create')); ?>"
+        class="group inline-flex h-14 min-w-[220px] items-center justify-center gap-3
+               rounded-2xl
+               bg-slate-950
+               px-8
+               text-sm font-black
+               text-white
+               shadow-[0_18px_40px_-15px_rgba(15,23,42,0.45)]
+               transition-all duration-300
+               hover:-translate-y-1
+               hover:bg-primary-600
+               hover:shadow-[0_22px_45px_-15px_rgba(37,99,235,0.35)]"
+    >
+
+        <span>Book your appointment</span>
+
+        <span class="flex h-8 w-8 shrink-0 items-center justify-center
+                     rounded-full bg-white/10
+                     text-sm
+                     transition-all duration-300
+                     group-hover:translate-x-1
+                     group-hover:bg-white/20">
+            ↗
+        </span>
+
+    </a>
+
+
+    
+    <a
+        href="<?php echo e(route('doctors.index')); ?>"
+        class="group inline-flex h-14 min-w-[190px] items-center justify-center gap-3
+               rounded-2xl
+               border border-slate-200
+               bg-white
+               px-8
+               text-sm font-bold
+               text-slate-800
+               shadow-[0_8px_25px_-12px_rgba(15,23,42,0.25)]
+               transition-all duration-300
+               hover:-translate-y-1
+               hover:border-primary-200
+               hover:bg-slate-50
+               hover:shadow-[0_18px_35px_-15px_rgba(15,99,224,0.2)]"
+    >
+
+        <span>Find a specialist</span>
+
+        <span class="transition-transform duration-300 group-hover:translate-x-1">
+            →
+        </span>
+
+    </a>
+
+</div>
+
+
+                
+                <div class="mt-12 flex flex-wrap items-center
+                            justify-center gap-x-8 gap-y-4
+                            border-t border-slate-100 pt-8
+                            text-xs font-semibold text-slate-400
+                            sm:text-sm">
+
+                    <span class="inline-flex items-center gap-2">
+                        <span class="flex h-5 w-5 items-center justify-center rounded-full bg-emerald-50 text-emerald-600">
+                            ✓
+                        </span>
+                        Easy booking
+                    </span>
+
+                    <span class="hidden h-4 w-px bg-slate-200 sm:block"></span>
+
+                    <span class="inline-flex items-center gap-2">
+                        <span class="flex h-5 w-5 items-center justify-center rounded-full bg-blue-50 text-blue-600">
+                            ✓
+                        </span>
+                        Trusted specialists
+                    </span>
+
+                    <span class="hidden h-4 w-px bg-slate-200 sm:block"></span>
+
+                    <span class="inline-flex items-center gap-2">
+                        <span class="flex h-5 w-5 items-center justify-center rounded-full bg-violet-50 text-violet-600">
+                            ✓
+                        </span>
+                        Secure healthcare
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+ <?php echo $__env->renderComponent(); ?>
+<?php endif; ?>
+<?php if (isset($__attributesOriginal5863877a5171c196453bfa0bd807e410)): ?>
+<?php $attributes = $__attributesOriginal5863877a5171c196453bfa0bd807e410; ?>
+<?php unset($__attributesOriginal5863877a5171c196453bfa0bd807e410); ?>
+<?php endif; ?>
+<?php if (isset($__componentOriginal5863877a5171c196453bfa0bd807e410)): ?>
+<?php $component = $__componentOriginal5863877a5171c196453bfa0bd807e410; ?>
+<?php unset($__componentOriginal5863877a5171c196453bfa0bd807e410); ?>
+<?php endif; ?><?php /**PATH C:\ITprojects\New folder\resources\views/home.blade.php ENDPATH**/ ?>

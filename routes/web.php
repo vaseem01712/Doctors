@@ -59,7 +59,10 @@ Route::middleware('auth')->group(function () {
         Route::get('/dashboard',[DoctorPortalController::class,'dashboard'])->name('doctor.dashboard');
         Route::get('/patients',[DoctorPortalController::class,'patients'])->name('doctor.patients');
         Route::get('/patients/{patient}',[DoctorPortalController::class,'patient'])->name('doctor.patient.show');
+        Route::post('/patients/{patient}/notifications',[DoctorPortalController::class,'sendPatientNotification'])->name('doctor.patient.notifications.send');
         Route::get('/appointments',[DoctorPortalController::class,'appointments'])->name('doctor.appointments');
+        Route::patch('/appointments/{appointment}/status',[DoctorPortalController::class,'updateAppointmentStatus'])->name('doctor.appointments.status');
+        Route::patch('/appointments/{appointment}/reschedule',[DoctorPortalController::class,'rescheduleAppointment'])->name('doctor.appointments.reschedule');
         Route::get('/reports/upload',[MedicalReportController::class,'selectPatient'])->name('doctor.reports.select-patient');
         Route::get('/reports',[MedicalReportController::class,'index'])->name('doctor.reports');
         Route::get('/patients/{patient}/reports/create',[MedicalReportController::class,'create'])->name('doctor.reports.create');

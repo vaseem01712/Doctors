@@ -9,7 +9,13 @@ use Illuminate\Queue\SerializesModels;
 class AppointmentConfirmationMail extends Mailable
 {
     use Queueable, SerializesModels;
-    public function __construct(public Appointment $appointment) {}
+
+    public function __construct(
+        public Appointment $appointment,
+        public ?string $accessUrl = null,
+        public bool $isNewPatient = false
+    ) {}
+
     public function build(): self
     {
         return $this->subject('Appointment request received — MediCare')
