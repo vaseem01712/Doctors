@@ -19,6 +19,9 @@ WORKDIR /var/www/html
 
 COPY . .
 
+# Create SQLite database file
+RUN mkdir -p database && touch database/database.sqlite
+
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
 RUN composer install \
@@ -27,6 +30,7 @@ RUN composer install \
     --prefer-dist \
     --optimize-autoloader
 
+# Copy Vite production assets
 COPY --from=frontend /app/public/build ./public/build
 
 ENV WEBROOT=/var/www/html/public
